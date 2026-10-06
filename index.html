@@ -125,6 +125,17 @@ blockquote footer b{color:var(--fg);font-weight:600}
 .step .k{font-family:var(--display);font-weight:800;font-size:14px;color:var(--accent);letter-spacing:.08em}
 .step h3{font-family:var(--display);font-weight:700;font-size:22px;margin-top:6px;line-height:1.15}
 .step p{color:var(--muted);margin-top:8px;font-size:16px}
+.tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column}
+.track .tag{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.track h3{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.2;margin-top:8px}
+.chain{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.chain li{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:15px}
+.chain li::after{content:"→";color:var(--muted);font-weight:400}
+.chain li:last-child::after{content:none}
+.chain li:last-child{color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:5px 12px}
+.track p{margin-top:16px;color:var(--muted);font-size:16px}
+.tracks-note{margin-top:18px;color:var(--fg);max-width:62ch}
 .funnel{margin-top:48px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
 .funnel ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .funnel li{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:17px}
@@ -174,7 +185,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
   .hero-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .case{grid-template-columns:1fr;gap:6px}
-  .principles,.offer,.roles{grid-template-columns:1fr}
+  .principles,.offer,.roles,.tracks{grid-template-columns:1fr}
   .menu small{display:none}
   .logo-row{gap:22px 32px}
 }
@@ -206,7 +217,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m5.8 14.12c-.24.68-1.42 1.31-1.96 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.14-.18-1.12-1.49-1.12-2.84s.71-2.01.96-2.29c.25-.27.55-.34.73-.34l.52.01c.17.01.39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.8.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34"/></svg></span>
           <span data-i18n="wa">Écris-moi sur WhatsApp</span>
         </a>
-        <a class="cal js-cal" href="https://wa.me/33626918280" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span data-i18n="cal">Prendre rendez-vous</span></a>
+        <a class="cal js-cal" href="https://calendar.google.com/appointments/schedules/AcZssZ3FNLyqDiJ0YG0Ro8TrphNYC9alkPIg8inlGNk0NQOIVhH5KVL_zs5lKWy4_Z6-U_x18ea6Ofar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span data-i18n="cal">Prendre rendez-vous</span></a>
         <span class="hint" data-i18n="hint">Je réponds en général en moins de 2 h.</span>
       </div>
       <dl class="hero-stats">
@@ -276,6 +287,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
     <div class="case"><h3>InterCloud<small>SaaS B2B</small></h3><p data-i18n="c3">Lancement d'une nouvelle offre sur <strong>3 marchés</strong> et en 3 langues, Google Ads et Bing, du plan de campagne jusqu'au suivi des inscriptions par pays.</p></div>
     <div class="case"><h3>Bulteau Systems<small data-i18n="c4s">e-commerce + B2B</small></h3><p data-i18n="c4">Acquisition reprise de A à Z et déployée sur <strong>5 régies</strong> : Google, Meta, LinkedIn, Microsoft et ChatGPT Ads.</p></div>
     <div class="case"><h3 data-i18n="c5h">En freelance<small>start-ups, PME, grands groupes</small></h3><p data-i18n="c5"><strong>+250 missions</strong> et <strong>+2,5 M€</strong> de chiffre d'affaires générés pour mes clients, de PayFit à Chanel, sur 8 canaux. Expansion internationale, lancements de produit, repositionnements, funnels qui convertissent.</p></div>
+    <div class="case"><h3>iTechCase<small data-i18n="c6s">ma première boîte · e-commerce</small></h3><p data-i18n="c6">Créée à 17 ans : coques et accessoires smartphone vendus en Europe, en Amérique et dans le monde, sur <strong>7 canaux</strong> : Shopify, Amazon FBA, Cdiscount, eBay, Fnac, Rakuten et une boutique physique.</p></div>
   </div>
 </section>
 
@@ -298,29 +310,29 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
 <section class="wrap reveal" id="methode">
   <p class="eyebrow" data-i18n="t0">Ma méthode</p>
   <h2 data-i18n="t1">L'IA fait le boulot. Moi, j'ai le <span class="scrib"><mark>goût du résultat</mark><svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M3 15C40 6 110 3 197 9"/></svg></span>.</h2>
-  <p class="lead" data-i18n="t2">J'ai créé et dirigé mes propres boîtes. J'ai payé mes pubs avec mon argent. Alors je traite ton budget comme le mien : chaque euro doit revenir avec des amis.</p>
+  <p class="lead" data-i18n="t2">J'ai créé et dirigé mes propres boîtes. J'ai payé mes pubs avec mon argent. Alors je traite ton budget comme le mien : chaque euro investi doit en rapporter plusieurs. Sinon, on le coupe.</p>
   <div class="steps">
     <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">01</span><h3 data-i18n="p1h">Audit 360°</h3><p data-i18n="p1">Comptes, tracking, CRM, site, offres. Chaque euro doit avoir une cible, une offre, une page et une valeur attendue. Sinon, il saute.</p></div>
-    <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">02</span><h3 data-i18n="p2h">Fondations</h3><p data-i18n="p2">Tracking de bout en bout jusqu'au CRM, conversions hiérarchisées, landing pages qui qualifient avant l'appel commercial.</p></div>
-    <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">03</span><h3 data-i18n="p3h">Lancement</h3><p data-i18n="p3">On capte d'abord l'intention (Search). Chaque régie prouve qu'elle rapporte seule avant qu'on la connecte aux autres.</p></div>
+    <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">02</span><h3 data-i18n="p2h">Fondations</h3><p data-i18n="p2">Tracking de bout en bout, de la boutique ou du CRM jusqu'aux régies. Conversions classées par valeur réelle, flux produits et pages prêts à convertir.</p></div>
+    <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">03</span><h3 data-i18n="p3h">Lancement</h3><p data-i18n="p3">On capte d'abord la demande qui existe déjà (Search, Shopping). Chaque régie prouve qu'elle rapporte seule avant qu'on la connecte aux autres.</p></div>
     <div class="step"><span class="k" data-i18n="st">ÉTAPE</span> <span class="k">04</span><h3 data-i18n="p4h">Pilotage</h3><p data-i18n="p4">Je teste, je coupe, je relance, chaque semaine. Deux points stratégiques par mois pour décider, pas pour lire des chiffres.</p></div>
   </div>
 
-  <div class="funnel">
-    <ol>
-      <li><span data-i18n="f1">Clic</span></li>
-      <li><span data-i18n="f2">Lead</span></li>
-      <li><span data-i18n="f3">Lead qualifié</span></li>
-      <li><span data-i18n="f4">Opportunité</span></li>
-      <li><span data-i18n="f5">CA signé</span></li>
-    </ol>
-    <p data-i18n="f6">Je pilote au <strong>chiffre d'affaires signé</strong>, pas au coût par lead. Les régies apprennent quels clics deviennent des contrats, pas juste des formulaires.</p>
-    <div class="roles">
-      <div><b data-i18n="ro1h">Google capte</b><span data-i18n="ro1">la demande qui cherche déjà.</span></div>
-      <div><b data-i18n="ro2h">LinkedIn convainc</b><span data-i18n="ro2">les décideurs qui ne cherchent pas encore.</span></div>
-      <div><b data-i18n="ro3h">Meta relance</b><span data-i18n="ro3">ceux qui sont venus sans acheter.</span></div>
+  <div class="tracks">
+    <div class="track">
+      <span class="tag">E-commerce</span>
+      <h3 data-i18n="k1h">Je pilote à la marge, pas au ROAS affiché.</h3>
+      <ol class="chain"><li data-i18n="k1a">Clic</li><li data-i18n="k1b">Panier</li><li data-i18n="k1c">Commande</li><li data-i18n="k1d">Marge</li></ol>
+      <p data-i18n="k1">Merchant Center et flux produits propres, Shopping et Performance Max segmentés par marge, stock et best-sellers, panier moyen et réachat. Ma première boîte était un e-commerce vendu sur 7 canaux : je connais le métier de l'intérieur.</p>
+    </div>
+    <div class="track">
+      <span class="tag" data-i18n="k2t">Lead gen &amp; B2B</span>
+      <h3 data-i18n="k2h">Je pilote au CA signé, pas au coût par lead.</h3>
+      <ol class="chain"><li data-i18n="k2a">Clic</li><li data-i18n="k2b">Lead</li><li data-i18n="k2c">Lead qualifié</li><li data-i18n="k2d">CA signé</li></ol>
+      <p data-i18n="k2">Tracking jusqu'au CRM, pages qui qualifient avant l'appel commercial, ventes renvoyées aux régies. Elles apprennent quels clics deviennent des contrats, pas juste des formulaires.</p>
     </div>
   </div>
+  <p class="tracks-note" data-i18n="k3">Dans les deux cas, chaque régie a un rôle décidé à partir de tes données et de ton cycle d'achat. Pas d'un modèle tout fait.</p>
 
   <div class="principles">
     <div><span class="em" aria-hidden="true">🤝</span><div><h4 data-i18n="q1h">Partenaire, pas prestataire</h4><p data-i18n="q1">Je ne prends que des collaborations long terme. Ton objectif devient le mien.</p></div></div>
@@ -342,8 +354,8 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
       <ul data-i18n="o2">
         <li>Audit 360° des comptes, du tracking et des offres</li>
         <li>Plan d'acquisition multicanal</li>
-        <li>Structure de campagnes et tracking jusqu'au CRM</li>
-        <li>Landing pages qui qualifient, si besoin</li>
+        <li>Structure de campagnes et tracking jusqu'à la vente</li>
+        <li>Flux produits, landing pages et parcours de conversion, si besoin</li>
       </ul>
     </div>
     <div class="plan main">
@@ -379,7 +391,7 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
       <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m5.8 14.12c-.24.68-1.42 1.31-1.96 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.14-.18-1.12-1.49-1.12-2.84s.71-2.01.96-2.29c.25-.27.55-.34.73-.34l.52.01c.17.01.39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.8.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34"/></svg></span>
       <span data-i18n="wa">Écris-moi sur WhatsApp</span>
     </a>
-    <a class="cal js-cal" href="https://wa.me/33626918280" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span data-i18n="cal">Prendre rendez-vous</span></a>
+    <a class="cal js-cal" href="https://calendar.google.com/appointments/schedules/AcZssZ3FNLyqDiJ0YG0Ro8TrphNYC9alkPIg8inlGNk0NQOIVhH5KVL_zs5lKWy4_Z6-U_x18ea6Ofar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span data-i18n="cal">Prendre rendez-vous</span></a>
   </div>
 </section>
 
@@ -390,10 +402,10 @@ footer.site{border-top:1px solid var(--line);padding-block:28px;color:var(--mute
 
 <script>
 /* Lien de prise de rendez-vous (Calendly, Google Agenda…) : le coller ici. Vide = le bouton ouvre WhatsApp avec une demande de créneau. */
-const CAL_URL = "";
+const CAL_URL = "https://calendar.google.com/appointments/schedules/AcZssZ3FNLyqDiJ0YG0Ro8TrphNYC9alkPIg8inlGNk0NQOIVhH5KVL_zs5lKWy4_Z6-U_x18ea6Ofar";
 const WA = "33626918280";
 const T = {
-en:{status:"<b>Madrid · Paris</b> — clients in France, Spain and beyond",
+en:{c6s:"my first company · e-commerce",c6:"Started at 17: phone cases and accessories sold across Europe, the Americas and worldwide, on <strong>7 channels</strong>: Shopify, Amazon FBA, Cdiscount, eBay, Fnac, Rakuten and a physical store.",status:"<b>Madrid · Paris</b> — clients in France, Spain and beyond",
 h1:"I run your acquisition like it's <mark>my own company</mark>.",
 sub:"Serial entrepreneur, 10 years in paid media, <strong>250+ companies</strong> helped. AI executes at full speed. I decide where every euro goes.",
 wa:"Message me on WhatsApp",cal:"Book a call",hint:"I usually reply within 2 hours.",
@@ -409,24 +421,22 @@ c4s:"e-commerce + B2B",c4:"Acquisition rebuilt from A to Z and rolled out on <st
 c5h:"Freelance<small>start-ups, SMEs, large groups</small>",c5:"<strong>250+ projects</strong> and <strong>€2.5M+</strong> in revenue generated for my clients, from PayFit to Chanel, across 8 channels. International expansion, product launches, repositioning, funnels that convert.",
 a0:"What clients say",a1:"What the people who <span class=\"scrib\"><mark>trusted me with their budget</mark>%S</span> say.",a2:"5.0 from 47 reviews · Quality 5.0 · Timing 4.9 · Communication 4.9",
 a3:"5.0/5. Yes, it looks fake. Except these are <em>real clients who actually paid</em>, with reviews verified by Malt. I find it suspicious too.",ceo:"A CEO",ceos:"Malt recommendation",a4:"Reviews published and verified on Malt, quoted word for word in their original French.",
-t0:"My method",t1:"AI does the work. I bring the <span class=\"scrib\"><mark>taste for results</mark>%S</span>.",t2:"I've founded and run my own companies. I paid for my ads with my own money. So I treat your budget like mine: every euro has to come back with friends.",
+t0:"My method",t1:"AI does the work. I bring the <span class=\"scrib\"><mark>taste for results</mark>%S</span>.",t2:"I've founded and run my own companies. I paid for my ads with my own money. So I treat your budget like mine: every euro invested has to bring back several. Otherwise, it gets cut.",
 st:"STEP",p1h:"360° audit",p1:"Ad accounts, tracking, CRM, website, offers. Every euro needs a target, an offer, a page and an expected value. Otherwise it goes.",
-p2h:"Foundations",p2:"End-to-end tracking into the CRM, ranked conversions, landing pages that qualify leads before the sales call.",
-p3h:"Launch",p3:"We capture intent first (Search). Each platform proves it pays on its own before we connect it to the others.",
+p2h:"Foundations",p2:"End-to-end tracking, from your store or CRM back to the ad platforms. Conversions ranked by real value, product feeds and pages ready to convert.",
+p3h:"Launch",p3:"We capture existing demand first (Search, Shopping). Each platform proves it pays on its own before we connect it to the others.",
 p4h:"Steering",p4:"I test, cut and relaunch every week. Two strategy sessions a month to make decisions, not to read numbers.",
-f1:"Click",f2:"Lead",f3:"Qualified lead",f4:"Opportunity",f5:"Signed revenue",
-f6:"I optimise for <strong>signed revenue</strong>, not cost per lead. The platforms learn which clicks turn into contracts, not just form fills.",
-ro1h:"Google captures",ro1:"demand that's already searching.",ro2h:"LinkedIn convinces",ro2:"decision-makers who aren't searching yet.",ro3h:"Meta follows up",ro3:"with people who came but didn't buy.",
+k1h:"I optimise for margin, not the ROAS on screen.",k1a:"Click",k1b:"Cart",k1c:"Order",k1d:"Margin",k1:"Clean Merchant Center and product feeds, Shopping and Performance Max split by margin, stock and best-sellers, average basket and repeat purchase. My first company was an e-commerce business selling on 7 channels: I know the trade from the inside.",k2t:"Lead gen &amp; B2B",k2h:"I optimise for signed revenue, not cost per lead.",k2a:"Click",k2b:"Lead",k2c:"Qualified lead",k2d:"Signed revenue",k2:"Tracking into the CRM, pages that qualify before the sales call, sales fed back to the platforms. They learn which clicks turn into contracts, not just form fills.",k3:"Either way, each platform gets a role decided from your data and your buying cycle. Not from a one-size-fits-all model.",
 q1h:"A partner, not a vendor",q1:"I only take long-term engagements. Your goal becomes mine.",q2h:"A teacher",q2:"I document and explain everything. Your team levels up instead of depending on me.",
 q3h:"Proactive",q3:"I bring ideas and tests before you ask for them. New platforms included.",q4h:"Powered by AI",q4:"All your account data centralised and analysed continuously. I execute faster and spend my time on strategy.",
 o0:"The offer",o1:"Two stages. <span class=\"scrib\"><mark>Zero bullshit.</mark>%S</span>",o2t:"To get started",dev:"Custom quote",
-o2:"<li>360° audit of accounts, tracking and offers</li><li>Multichannel acquisition plan</li><li>Campaign structure and tracking into the CRM</li><li>Landing pages that qualify, if needed</li>",
+o2:"<li>360° audit of accounts, tracking and offers</li><li>Multichannel acquisition plan</li><li>Campaign structure and tracking down to the sale</li><li>Product feeds, landing pages and conversion paths, if needed</li>",
 o3t:"For the long run",o3h:"Monthly management",o3:"<li>Continuous optimisation of all your platforms</li><li>Creative, audience and bidding tests</li><li>Real-time dashboard</li><li>Two strategy sessions a month and a direct WhatsApp line</li>",
 o4:"Minimum ad budget <b>€5,000/month</b> <span>Below that, I can't make you money, and I'd rather tell you upfront.</span>",
 n1:"<li><strong>you don't give as much as I do.</strong> I go all in, and I expect the same in return;</li><li><strong>you don't have the required monthly budget</strong> (€5,000 minimum in ad spend);</li><li><strong>your emotions drive your execution.</strong> Changing everything at the first wave of stress breaks the platforms' learning and blows up the mental load, yours and mine;</li><li><strong>you're looking for a one-month gig.</strong> I only do long term.</li>",
 z0:"Shall we talk?",z1:"Your next client is <span class=\"scrib\"><mark>already looking for you</mark>%S</span>.",ft:"Madrid · Paris · in French, Spanish, English and Italian",
 waText:"Hi Greg, I want more clients.",calText:"Hi Greg, I'd like to book a call."},
-es:{status:"<b>Madrid · París</b> — clientes en Francia, España y el resto del mundo",
+es:{c6s:"mi primera empresa · e-commerce",c6:"Creada a los 17 años: fundas y accesorios para smartphone vendidos en Europa, América y el resto del mundo, en <strong>7 canales</strong>: Shopify, Amazon FBA, Cdiscount, eBay, Fnac, Rakuten y una tienda física.",status:"<b>Madrid · París</b> — clientes en Francia, España y el resto del mundo",
 h1:"Llevo tu captación como si fuera <mark>mi empresa</mark>.",
 sub:"Emprendedor en serie, 10 años en paid media, <strong>+250 empresas</strong> acompañadas. La IA ejecuta a toda velocidad. Yo decido adónde va cada euro.",
 wa:"Escríbeme por WhatsApp",cal:"Reservar una llamada",hint:"Suelo responder en menos de 2 h.",
@@ -442,24 +452,22 @@ c4s:"e-commerce + B2B",c4:"Captación rehecha de la A a la Z y desplegada en <st
 c5h:"Como freelance<small>startups, pymes, grandes grupos</small>",c5:"<strong>+250 misiones</strong> y <strong>+2,5 M€</strong> de facturación generada para mis clientes, de PayFit a Chanel, en 8 canales. Expansión internacional, lanzamientos de producto, reposicionamientos, embudos que convierten.",
 a0:"Lo que dicen",a1:"Lo que dicen quienes me <span class=\"scrib\"><mark>confiaron su presupuesto</mark>%S</span>.",a2:"5,0 sobre 47 opiniones · Calidad 5,0 · Plazos 4,9 · Comunicación 4,9",
 a3:"5,0/5, vale, huele a falso. Solo que son <em>clientes reales que pagaron de verdad</em>, con opiniones verificadas por Malt. A mí también me parece sospechoso.",ceo:"Un CEO",ceos:"recomendación en Malt",a4:"Opiniones publicadas y verificadas en Malt, citadas palabra por palabra en su francés original.",
-t0:"Mi método",t1:"La IA hace el trabajo. Yo pongo el <span class=\"scrib\"><mark>gusto por el resultado</mark>%S</span>.",t2:"He creado y dirigido mis propias empresas. Pagué mis anuncios con mi dinero. Así que trato tu presupuesto como el mío: cada euro tiene que volver con amigos.",
+t0:"Mi método",t1:"La IA hace el trabajo. Yo pongo el <span class=\"scrib\"><mark>gusto por el resultado</mark>%S</span>.",t2:"He creado y dirigido mis propias empresas. Pagué mis anuncios con mi dinero. Así que trato tu presupuesto como el mío: cada euro invertido tiene que traer varios de vuelta. Si no, se corta.",
 st:"PASO",p1h:"Auditoría 360°",p1:"Cuentas, tracking, CRM, web, ofertas. Cada euro necesita un público, una oferta, una página y un valor esperado. Si no, fuera.",
-p2h:"Cimientos",p2:"Tracking de punta a punta hasta el CRM, conversiones jerarquizadas, landing pages que cualifican antes de la llamada comercial.",
-p3h:"Lanzamiento",p3:"Primero captamos la intención (Search). Cada plataforma demuestra que es rentable sola antes de conectarla con las demás.",
+p2h:"Cimientos",p2:"Tracking de punta a punta, de la tienda o el CRM a las plataformas. Conversiones ordenadas por valor real, feeds de producto y páginas listos para convertir.",
+p3h:"Lanzamiento",p3:"Primero captamos la demanda que ya existe (Search, Shopping). Cada plataforma demuestra que es rentable sola antes de conectarla con las demás.",
 p4h:"Pilotaje",p4:"Pruebo, corto y relanzo cada semana. Dos reuniones estratégicas al mes para decidir, no para leer cifras.",
-f1:"Clic",f2:"Lead",f3:"Lead cualificado",f4:"Oportunidad",f5:"Venta firmada",
-f6:"Optimizo para la <strong>facturación firmada</strong>, no para el coste por lead. Las plataformas aprenden qué clics se convierten en contratos, no solo en formularios.",
-ro1h:"Google capta",ro1:"la demanda que ya está buscando.",ro2h:"LinkedIn convence",ro2:"a los decisores que todavía no buscan.",ro3h:"Meta recupera",ro3:"a quienes vinieron sin comprar.",
+k1h:"Optimizo para el margen, no para el ROAS que sale en pantalla.",k1a:"Clic",k1b:"Carrito",k1c:"Pedido",k1d:"Margen",k1:"Merchant Center y feeds de producto limpios, Shopping y Performance Max segmentados por margen, stock y más vendidos, ticket medio y recompra. Mi primera empresa fue un e-commerce que vendía en 7 canales: conozco el oficio desde dentro.",k2t:"Lead gen y B2B",k2h:"Optimizo para la venta firmada, no para el coste por lead.",k2a:"Clic",k2b:"Lead",k2c:"Lead cualificado",k2d:"Venta firmada",k2:"Tracking hasta el CRM, páginas que cualifican antes de la llamada comercial, ventas devueltas a las plataformas. Aprenden qué clics se convierten en contratos, no solo en formularios.",k3:"En ambos casos, cada plataforma tiene un papel decidido a partir de tus datos y tu ciclo de compra. No de un modelo genérico.",
 q1h:"Socio, no proveedor",q1:"Solo acepto colaboraciones a largo plazo. Tu objetivo pasa a ser el mío.",q2h:"Pedagogo",q2:"Lo documento y lo explico todo. Tu equipo aprende en lugar de depender de mí.",
 q3h:"Proactivo",q3:"Llego con ideas y tests antes de que los pidas. Nuevas plataformas incluidas.",q4h:"Potenciado por IA",q4:"Todos los datos de tu cuenta centralizados y analizados en continuo. Ejecuto más rápido y dedico mi tiempo a la estrategia.",
 o0:"La oferta",o1:"Dos fases. <span class=\"scrib\"><mark>Cero rollo.</mark>%S</span>",o2t:"Para empezar",dev:"Presupuesto a medida",
-o2:"<li>Auditoría 360° de cuentas, tracking y ofertas</li><li>Plan de captación multicanal</li><li>Estructura de campañas y tracking hasta el CRM</li><li>Landing pages que cualifican, si hace falta</li>",
+o2:"<li>Auditoría 360° de cuentas, tracking y ofertas</li><li>Plan de captación multicanal</li><li>Estructura de campañas y tracking hasta la venta</li><li>Feeds de producto, landing pages y recorridos de conversión, si hace falta</li>",
 o3t:"A largo plazo",o3h:"Pilotaje mensual",o3:"<li>Optimización continua de todas tus plataformas</li><li>Tests de creatividades, audiencias y pujas</li><li>Dashboard en tiempo real</li><li>Dos reuniones estratégicas al mes y una línea directa de WhatsApp</li>",
 o4:"Inversión publicitaria mínima <b>5 000 €/mes</b> <span>Por debajo, no puedo hacerte ganar dinero, y prefiero decírtelo.</span>",
 n1:"<li><strong>no te implicas tanto como yo.</strong> Yo lo doy todo y espero lo mismo al otro lado;</li><li><strong>no tienes el presupuesto mensual necesario</strong> (5 000 € de inversión mínima);</li><li><strong>tus emociones mandan sobre tu ejecución.</strong> Cambiarlo todo al primer susto rompe el aprendizaje de las plataformas y dispara la carga mental, la tuya y la mía;</li><li><strong>buscas una misión de un mes.</strong> Solo trabajo a largo plazo.</li>",
 z0:"¿Hablamos?",z1:"Tu próximo cliente ya <span class=\"scrib\"><mark>te está buscando</mark>%S</span>.",ft:"Madrid · París · en francés, español, inglés e italiano",
 waText:"Hola Greg, quiero más clientes.",calText:"Hola Greg, quiero reservar una llamada."},
-it:{status:"<b>Madrid · Parigi</b> — clienti in Francia, Spagna e all'estero",
+it:{c6s:"la mia prima azienda · e-commerce",c6:"Fondata a 17 anni: cover e accessori per smartphone venduti in Europa, America e nel resto del mondo, su <strong>7 canali</strong>: Shopify, Amazon FBA, Cdiscount, eBay, Fnac, Rakuten e un negozio fisico.",status:"<b>Madrid · Parigi</b> — clienti in Francia, Spagna e all'estero",
 h1:"Gestisco la tua acquisizione come se fosse <mark>la mia azienda</mark>.",
 sub:"Imprenditore seriale, 10 anni di paid media, <strong>oltre 250 aziende</strong> seguite. L'IA esegue a tutta velocità. Io decido dove va ogni euro.",
 wa:"Scrivimi su WhatsApp",cal:"Prenota una call",hint:"Di solito rispondo in meno di 2 ore.",
@@ -475,18 +483,16 @@ c4s:"e-commerce + B2B",c4:"Acquisizione rifatta dalla A alla Z e distribuita su 
 c5h:"Da freelance<small>startup, PMI, grandi gruppi</small>",c5:"<strong>Oltre 250 progetti</strong> e <strong>+2,5 M€</strong> di fatturato generato per i miei clienti, da PayFit a Chanel, su 8 canali. Espansione internazionale, lanci di prodotto, riposizionamenti, funnel che convertono.",
 a0:"Cosa dicono",a1:"Cosa dice chi mi ha <span class=\"scrib\"><mark>affidato il suo budget</mark>%S</span>.",a2:"5,0 su 47 recensioni · Qualità 5,0 · Tempi 4,9 · Comunicazione 4,9",
 a3:"5,0/5, d'accordo, sembra finto. Peccato che siano <em>clienti veri che hanno pagato davvero</em>, con recensioni verificate da Malt. Anche a me sembra sospetto.",ceo:"Un CEO",ceos:"raccomandazione su Malt",a4:"Recensioni pubblicate e verificate su Malt, citate parola per parola nel francese originale.",
-t0:"Il mio metodo",t1:"L'IA fa il lavoro. Io ci metto il <span class=\"scrib\"><mark>gusto del risultato</mark>%S</span>.",t2:"Ho fondato e guidato le mie aziende. Ho pagato le mie pubblicità con i miei soldi. Quindi tratto il tuo budget come il mio: ogni euro deve tornare con degli amici.",
+t0:"Il mio metodo",t1:"L'IA fa il lavoro. Io ci metto il <span class=\"scrib\"><mark>gusto del risultato</mark>%S</span>.",t2:"Ho fondato e guidato le mie aziende. Ho pagato le mie pubblicità con i miei soldi. Quindi tratto il tuo budget come il mio: ogni euro investito deve riportarne diversi. Altrimenti si taglia.",
 st:"FASE",p1h:"Audit a 360°",p1:"Account, tracking, CRM, sito, offerte. Ogni euro deve avere un target, un'offerta, una pagina e un valore atteso. Altrimenti salta.",
-p2h:"Fondamenta",p2:"Tracking end-to-end fino al CRM, conversioni gerarchizzate, landing page che qualificano prima della call commerciale.",
-p3h:"Lancio",p3:"Prima catturiamo l'intenzione (Search). Ogni piattaforma dimostra di rendere da sola prima di collegarla alle altre.",
+p2h:"Fondamenta",p2:"Tracking end-to-end, dallo shop o dal CRM alle piattaforme. Conversioni ordinate per valore reale, feed prodotti e pagine pronti a convertire.",
+p3h:"Lancio",p3:"Prima catturiamo la domanda che esiste già (Search, Shopping). Ogni piattaforma dimostra di rendere da sola prima di collegarla alle altre.",
 p4h:"Gestione",p4:"Testo, taglio e rilancio ogni settimana. Due incontri strategici al mese per decidere, non per leggere numeri.",
-f1:"Clic",f2:"Lead",f3:"Lead qualificato",f4:"Opportunità",f5:"Fatturato firmato",
-f6:"Ottimizzo sul <strong>fatturato firmato</strong>, non sul costo per lead. Le piattaforme imparano quali clic diventano contratti, non solo moduli compilati.",
-ro1h:"Google cattura",ro1:"la domanda che sta già cercando.",ro2h:"LinkedIn convince",ro2:"i decisori che non cercano ancora.",ro3h:"Meta recupera",ro3:"chi è passato senza comprare.",
+k1h:"Ottimizzo sul margine, non sul ROAS che vedi a schermo.",k1a:"Clic",k1b:"Carrello",k1c:"Ordine",k1d:"Margine",k1:"Merchant Center e feed prodotti puliti, Shopping e Performance Max segmentati per margine, stock e best seller, carrello medio e riacquisto. La mia prima azienda era un e-commerce che vendeva su 7 canali: conosco il mestiere dall'interno.",k2t:"Lead gen e B2B",k2h:"Ottimizzo sul fatturato firmato, non sul costo per lead.",k2a:"Clic",k2b:"Lead",k2c:"Lead qualificato",k2d:"Fatturato firmato",k2:"Tracking fino al CRM, pagine che qualificano prima della call commerciale, vendite rimandate alle piattaforme. Imparano quali clic diventano contratti, non solo moduli compilati.",k3:"In entrambi i casi, ogni piattaforma ha un ruolo deciso a partire dai tuoi dati e dal tuo ciclo d'acquisto. Non da un modello standard.",
 q1h:"Partner, non fornitore",q1:"Accetto solo collaborazioni a lungo termine. Il tuo obiettivo diventa il mio.",q2h:"Pedagogo",q2:"Documento e spiego tutto. Il tuo team cresce invece di dipendere da me.",
 q3h:"Proattivo",q3:"Arrivo con idee e test prima che tu li chieda. Nuove piattaforme comprese.",q4h:"Potenziato dall'IA",q4:"Tutti i dati del tuo account centralizzati e analizzati di continuo. Eseguo più veloce e dedico il mio tempo alla strategia.",
 o0:"L'offerta",o1:"Due fasi. <span class=\"scrib\"><mark>Zero fuffa.</mark>%S</span>",o2t:"Per partire",dev:"Su preventivo",
-o2:"<li>Audit a 360° di account, tracking e offerte</li><li>Piano di acquisizione multicanale</li><li>Struttura delle campagne e tracking fino al CRM</li><li>Landing page che qualificano, se serve</li>",
+o2:"<li>Audit a 360° di account, tracking e offerte</li><li>Piano di acquisizione multicanale</li><li>Struttura delle campagne e tracking fino alla vendita</li><li>Feed prodotti, landing page e percorsi di conversione, se serve</li>",
 o3t:"Nel tempo",o3h:"Gestione mensile",o3:"<li>Ottimizzazione continua di tutte le tue piattaforme</li><li>Test di creatività, audience e offerte</li><li>Dashboard in tempo reale</li><li>Due incontri strategici al mese e una linea WhatsApp diretta</li>",
 o4:"Budget media minimo <b>5.000 €/mese</b> <span>Sotto questa cifra non posso farti guadagnare, e preferisco dirtelo.</span>",
 n1:"<li><strong>non ti impegni quanto me.</strong> Io do tutto e mi aspetto lo stesso dall'altra parte;</li><li><strong>non hai il budget mensile richiesto</strong> (5.000 € di media minimo);</li><li><strong>sono le emozioni a guidare la tua esecuzione.</strong> Cambiare tutto al primo momento di stress rompe l'apprendimento delle piattaforme e fa esplodere il carico mentale, il tuo e il mio;</li><li><strong>cerchi un incarico di un mese.</strong> Lavoro solo sul lungo periodo.</li>",
